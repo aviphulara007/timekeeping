@@ -485,8 +485,15 @@ const Home = () => {
     return `${day}-${month}-${year} at ${formattedHours}:${minutes}${ampm}`;
   };
 
+  // const filteredRow = projectedData?.filter(row => row.totalRow !== true);
+
+  // console.log("filteredRow", filteredRow)
+
 
   console.log("projectedData", projectedData)
+
+
+
   const handlePreviousWeek = () => {
     let currentStartDate;
 
