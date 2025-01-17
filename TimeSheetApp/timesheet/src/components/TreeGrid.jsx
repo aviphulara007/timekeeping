@@ -57,7 +57,6 @@ const groupingColDef = {
     return params.row.title ? (
       <Stack ml={"1rem"}>
         <Typography fontWeight={700}>{params.row.title}</Typography>
-        {/* <Tooltip title={params.row.level}></Tooltip> */}
         <CustomPopover
           content={
             customStepper()
@@ -138,70 +137,3 @@ export default function TreeGrid({ columns, density, data }) {
   );
 }
 
-// const initialState = useKeepGroupedColumnsHidden({
-//   apiRef,
-//   initialState: {
-// pinnedColumns: {
-//   left: [
-//     GRID_ROW_GROUPING_SINGLE_GROUPING_FIELD,
-//     "project"
-//   ]
-// }
-//   },
-// });
-
-// sx={{
-//   "& .MuiDataGrid-cell": {
-//     backgroundColor: "#FFFFFF", // Cell background color
-//     color: "black", // Parent text color
-//   },
-//   "& .MuiDataGrid-cell:first-child": {
-//     color: "blue", // First child text color
-//   },
-//   "& .MuiDataGrid-cell:last-child": {
-//     color: "blue", // Last child text color, if needed
-//   },
-//   "& .MuiOutlinedInput-input": {
-//     backgroundColor: "#FFFFFF", // Input background
-//   },
-//   "& .MuiDataGrid-columnHeaderTitle": {
-//     display: "none",
-//   },
-//   "& .MuiDataGrid-columnHeader": {
-//     backgroundColor: "#EEEEEE",
-//     color: "black",
-//     fontWeight: "700",
-//     fontSize: "16px",
-//   },
-//   "& .MuiDataGrid-cell--textLeft": {
-//     color: "black",
-//     fontWeight: "700",
-//     fontSize: "16px",
-//   },
-// }}
-
-// import * as React from 'react';
-// import { DataGridPro } from '@mui/x-data-grid-pro';
-// import { LicenseInfo } from '@mui/x-license';
-// import { useSelector } from 'react-redux';
-// import { Box } from '@mui/material';
-// import { DataGridPremium, useGridApiRef, useKeepGroupedColumnsHidden } from '@mui/x-data-grid-premium';
-// import MuiDataGrid from './MuiDataGrid';
-
-// LicenseInfo.setLicenseKey(
-//   "25f2175523aa72e9d954ec0ef5a74461Tz05NjQ3MCxFPTE3NTU3MDU1NjQwMDAsUz1wcmVtaXVtLExNPXN1YnNjcmlwdGlvbixQVj1pbml0aWFsLEtWPTI="
-// );
-
-// export default function TreeGrid({ columns, density }) {
-//   const projectedData = useSelector((state) => state?.CreateForm?.projectData);
-//   console.log("projectedData" , projectedData)
-
-//   return (
-//     <MuiDataGrid
-//       rows={projectedData}
-//       columns={columns}
-//       density={density || "compact"}
-//       hideFooter
-//     />
-//   );
-// }

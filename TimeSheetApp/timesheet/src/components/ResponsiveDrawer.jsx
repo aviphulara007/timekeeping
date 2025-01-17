@@ -99,12 +99,7 @@ export const  ResponsiveDrawer =(props)=>{
   const demoWindow = window ? window() : undefined;
 
   return (
-    // <AppProvider
-    //   navigation={NAVIGATION}
-    //   router={router}
-    //   theme={demoTheme}
-    //   window={demoWindow}
-    // >
+ 
       <DashboardLayout>
         <PageContainer>
           <Grid container spacing={1}>
@@ -144,6 +139,5 @@ export const  ResponsiveDrawer =(props)=>{
           </Grid>
         </PageContainer>
       </DashboardLayout>
-    // </AppProvider>
   );
 }

@@ -12,8 +12,6 @@ import {
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import WarningAmberIcon from "@mui/icons-material/WarningAmber";
-// import { MuiInput } from './MuiInput';
-// import { ModalBox, NotesTypography, StyledDrawerDivider, ModalStyledTypography } from './StyledComponents';
 import { formatFullDateString, formatFullTimeString } from "utils/AppUtil";
 import { addNotes } from "store/slice/TimesheetSlice";
 import MuiInput from "./MuiInput";

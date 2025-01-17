@@ -6,27 +6,18 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
-import MenuIcon from "@mui/icons-material/Menu";
 import CapexLogo from "../../img/CapeExLogo.png";
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import SearchIcon from "@mui/icons-material/Search";
 import {
-  Autocomplete,
   Avatar,
-  Chip,
   Divider,
   Menu,
   MenuItem,
-  Popper,
-  TextField,
   Tooltip,
 } from "@mui/material";
 import logo from "../../img/jma-logo.svg";
 import AddIcon from "@mui/icons-material/Add";
 import { useNavigate } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
-// import { resetForm } from "../../store/slice/CreateFormSlice";
 import MuiDrawer from "components/MuiDrawer";
 import CloseIcon from '@mui/icons-material/Close';
 import { useParams } from "react-router-dom";
@@ -57,14 +48,6 @@ const StyledBox = styled(Box)({
   padding: "20px"
 });
 
-const ApprovalStyledBox = styled(Box)({
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
-  color: "#FFFFFF",
-  cursor: "pointer"
-});
-
 const HeaderBox = styled(Box)({
   display: "flex",
   justifyContent: "space-between",
@@ -78,33 +61,14 @@ const HeadingTypography = styled(Typography)({
   fontWeight: "400",
   mt: 1,
 });
-const ApprovalsTypography = styled(Typography)({
-  fontWeight: "500",
-  fontSize: "22px",
-  color: "#FFFFFF",
-  marginBottom: "10px"
-});
 
-const AllTypography = styled(Typography)({
-  fontWeight: "500",
-  fontSize: "22px",
-  color: "#FFFFFF"
-});
 const StyledIconButton = styled(IconButton)({
   width: { xs: "25px", sm: "30px" },
   height: { xs: "25px", sm: "30px" },
 });
 
 
-const StyledTypography = styled(Typography)({
-  fontWeight: "500",
-  fontSize: "16px",
-  color: "#BDBDBD",
-  marginBottom: "10px"
-});
-
 const StyledDivider = styled(Divider)({
-  // mr: 1,
   borderColor: "white",
   height: "30px",
   mt: 10,
@@ -113,9 +77,7 @@ const StyledDivider = styled(Divider)({
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
   position: "static",
   background: "linear-gradient(to right, #005AA6, #0A2240)",
-  // height: "50px",
   justifyContent: "center",
-  // px: { xs: 1, sm: 2 },
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
@@ -134,12 +96,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-const TextTypography = styled(Typography)({
-  fontWeight: "500",
-  fontSize: "16px",
-  color: "#BDBDBD",
-  paddingLeft: "15px"
-});
 
 export default function ManagerHeader() {
   const [searchValue, setSearchValue] = React.useState("");
@@ -173,10 +129,6 @@ export default function ManagerHeader() {
   };
 
   const settings = ["Welcome Vijay Joshi", "Logout"];
-  // const handleCreateNew = () => {
-  //   dispatch(resetForm());
-  //   navigate("/CapEx_Request");
-  // };
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
@@ -190,50 +142,13 @@ export default function ManagerHeader() {
   const handleClose = () => {
     setDrawer(false)
   }
-  const accordionData = [
-    {
-      id: 1,
-      headerTitle: "MY TIMESHEETS",
-      title: "Current Week",
-      content: "All"
-    },
-    {
-      id: 2,
-      headerTitle: "MY TEAM'S TIMESHEETS",
-      title: "Pending Approvals",
-      content: "All"
-    },
-  ]
+
   const handleMenuItemClick = (setting) => {
     if (setting === "Logout") {
-      // handleLogout(); // Perform logout action
     }
     handleCloseUserMenu();
   };
-  const CustomPopper = (props) => {
-    return (
-      <Popper {...props} placement="bottom-start" sx={{ width: "30vw" }}>
-        {searchValue && dataTable?.length > 0 ? (
-          <Box sx={{ p: 2, backgroundColor: "white", width: "100vw" }}>
-            <Typography variant="h6">Search Results</Typography>
-            {dataTable
-              .filter((option) =>
-                option?.Aufex?.toLowerCase().includes(searchValue.toLowerCase())
-              )
-              .map((item, index) => (
-                <Box key={index}>
-                  <Typography variant="body1">
-                    {item.Aufex} / {item.Aufnr}
-                  </Typography>
-                </Box>
-              ))}
-          </Box>
-        ) : (
-          props.children
-        )}
-      </Popper>
-    );
-  };
+
   return (
     <Box sx={{ flexGrow: 1, justifyContent: "center" }}>
       <StyledAppBar>

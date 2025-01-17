@@ -169,7 +169,6 @@ const AddRowsScreen = () => {
       ],
     };
 
-    // console.log("data", data)
     const isDuplicate = projectedData.some(
       (item) => item.project === data.project && item.level === data.level
     );

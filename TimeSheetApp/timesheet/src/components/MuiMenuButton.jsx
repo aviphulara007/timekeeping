@@ -91,7 +91,6 @@ export default function MuiMenuButton({ options }) {
                         fontWeight: "400",
                         color: "#0073E6",
                       }}
-                    // onClick={(event) => handleMenuItemClick(event, index)}
                     >
                       {option?.icon}
                       {option?.label}

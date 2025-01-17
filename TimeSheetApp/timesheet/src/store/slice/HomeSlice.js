@@ -1,8 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-/**
- * Home Slice of the Redux Store
- */
 export const HomeSlice = createSlice({
   name: 'home',
   initialState: {
@@ -14,7 +11,7 @@ export const HomeSlice = createSlice({
     firstSearchRecord: 0,
     userDetails: [],
     selectedCards: null,
-    daterange: [] // This is where the date range should be stored
+    daterange: [] 
   },
   reducers: {
     addTodo: (state, action) => {
@@ -43,14 +40,11 @@ export const HomeSlice = createSlice({
       state.selectedCards = action.payload;
     },
     setDateRange: (state, action) => {
-      // Update the correct field, which is daterange
       state.daterange = action.payload;
     },
   },
 });
 
-// This is for dispatch
 export const { addTodo, setPlant, setSelectedKpi, setRefresh, setUserDetails, setSelectedCards, setDateRange } = HomeSlice.actions;
 
-// This is for configureStore
 export default HomeSlice.reducer;

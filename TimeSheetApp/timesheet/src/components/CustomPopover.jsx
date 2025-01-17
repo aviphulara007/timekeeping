@@ -41,12 +41,7 @@ const CustomPopover = ({ children, content }) => {
         anchorEl={anchorEl}      
         placement="bottom"
         modifiers={[
-          // {
-          //   name: "offset",
-          //   options: {
-          //     offset: [0, 15],
-          //   },
-          // },
+        
           {
             name: "flip",
             options: {

@@ -42,20 +42,12 @@ const DecimalInput = (props) => {
 
   const handleChange = (e) => {
     let inputValue = e.target.value;
-
-    // Remove any non-digit characters except for the decimal point
     inputValue = inputValue.replace(/[^\d.]/g, "");
-
-    // Remove extra decimal points
     const parts = inputValue.split(".");
     if (parts.length > 1) {
       inputValue = parts[0] + "." + parts.slice(1).join("");
     }
-
     setText(inputValue);
-    // if (onChange) {
-    //     onChange(inputValue);
-    // }
   };
 
   const handleBlur = () => {
@@ -101,7 +93,6 @@ const DecimalInput = (props) => {
           label={label}
           value={text}
           rows={rows}
-          // onBlur={handleBlur}
           multiline={multiline}
           onChange={handleChange}
           disabled={true}

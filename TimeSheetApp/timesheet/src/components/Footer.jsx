@@ -5,8 +5,7 @@ const StyledBox = styled(Box)(({ theme }) => ({
   flexDirection: "column",
   backgroundColor: "#FFFFFF",
   width: "100%",
-  height: "auto", // Adjust height dynamically
-  // minHeight: "2.5rem", // Maintain minimum height
+  height: "auto", 
   borderRadius: "4px",
   padding: "0.7rem",
   paddingLeft: "1rem",
@@ -16,7 +15,7 @@ const StyledBox = styled(Box)(({ theme }) => ({
   boxSizing: "border-box",
   boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
   [theme.breakpoints.up("sm")]: {
-    flexDirection: "row", // Adjust for larger screens
+    flexDirection: "row", 
     justifyContent: "space-between",
     alignItems: "center",
   },

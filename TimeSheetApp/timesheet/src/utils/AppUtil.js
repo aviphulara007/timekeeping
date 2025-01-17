@@ -2,10 +2,10 @@ import dayjs from "dayjs";
 
 export const StatusColorFormatter = (status) => {
     if (status) {
-        const sStatus = status.toLowerCase(); // Converts status to lowercase
+        const sStatus = status.toLowerCase(); 
         switch (sStatus) {
             case "approved":
-            case "completed":     // All lowercase
+            case "completed":    
                 return "#41AF6E";
             case "pending":
                 return "orange";
@@ -21,10 +21,10 @@ export const StatusColorFormatter = (status) => {
             case "locked":
                 return "#009FE3";
             default:
-                return "#009FE3"; // Default color
+                return "#009FE3"; 
         }
     } else {
-        return "#000"; // Fallback color if no status
+        return "#000"; 
     }
 };
 export const formatDateToISO = (date) => {

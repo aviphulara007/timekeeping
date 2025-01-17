@@ -10,11 +10,6 @@ const StyledTypography = styled(Typography)({
     marginTop: "10px"
 });
 
-// const StyledBox = styled(Box)({
-//     width:"50px",
-//     textAlign: 'center',    
-// });
-
 const StyledBox = styled(Box)(({ theme }) => ({
     display: 'flex',
     flexDirection: 'column',
@@ -70,11 +65,6 @@ export const DaysColumns = ({ handleInputChange, handleDelete, isEdit, selectedD
                     </StyledBox>
                 ),
                 renderCell: (params) => (
-                    // <MuiInput
-                    //     type={'number'}
-                    //     onChange={(value) => handleInputChange(`day${i}`, value, params?.row?.id)}
-                    //     value={params?.value || 0}
-                    // />
                     <StyledTypography >0</StyledTypography>
                 ),
             });
@@ -94,15 +84,6 @@ export const DaysColumns = ({ handleInputChange, handleDelete, isEdit, selectedD
             fontWeight: "700",
             minWidth: 170,
             renderCell: (params) => (
-                // <MuiInput
-                //     disabled={true}
-                //     onChange={(value) => {
-                //         handleInputChange('Zkstar', value, params?.row?.id);
-                //     }}
-                //     value="Total"
-                //     style={{ fontWeight: 'bold' }}
-
-                // />
                 <StyledTypography>Total</StyledTypography>
             ),
         },

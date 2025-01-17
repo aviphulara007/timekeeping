@@ -37,7 +37,6 @@ const createFormSlice = createSlice({
       state.projectData = state.projectData.filter(
         (item) => item.id !== action.payload
       );
-      // Clean up the total for deleted row
       delete state.totals[action.payload];
     },
     updateRow: (state, action) => {
@@ -52,12 +51,9 @@ const createFormSlice = createSlice({
         };
       }
 
-      // Subtract old value if it exists
       if (state.totals[rowId].values[field]) {
         state.totals[rowId].total -= state.totals[rowId].values[field];
       }
-
-      // Add new value
       state.totals[rowId].values[field] = value;
       state.totals[rowId].total = Object.values(
         state.totals[rowId].values

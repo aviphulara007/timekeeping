@@ -200,30 +200,6 @@ export default function Header() {
     }
     handleCloseUserMenu();
   };
-  // const CustomPopper = (props) => {
-  //   return (
-  //     <Popper {...props} placement="bottom-start" sx={{ width: "30vw" }}>
-  //       {searchValue && dataTable?.length > 0 ? (
-  //         <Box sx={{ p: 2, backgroundColor: "white", width: "100vw" }}>
-  //           <Typography variant="h6">Search Results</Typography>
-  //           {dataTable
-  //             .filter((option) =>
-  //               option?.Aufex?.toLowerCase().includes(searchValue.toLowerCase())
-  //             )
-  //             .map((item, index) => (
-  //               <Box key={index}>
-  //                 <Typography variant="body1">
-  //                   {item.Aufex} / {item.Aufnr}
-  //                 </Typography>
-  //               </Box>
-  //             ))}
-  //         </Box>
-  //       ) : (
-  //         props.children
-  //       )}
-  //     </Popper>
-  //   );
-  // };
   return (
     <Box sx={{ flexGrow: 1, justifyContent: "center" }}>
       <StyledAppBar>
@@ -257,7 +233,7 @@ export default function Header() {
             component="div"
             sx={{
               display: { sm: "block" },
-              marginLeft: "10px", // Adjusted for equal spacing
+              marginLeft: "10px",
             }}
           >
             CATS 2.0
@@ -312,7 +288,6 @@ export default function Header() {
             open={drawer}
             handleClose={handleClose}
             resizable={true}
-          // minWidth={"720px"}
           >
             <IconBox >
               <CloseIcon sx={{ cursor: "pointer", marginRight: "10px", color: "#FFFF", marginTop: "10px" }} onClick={() => setDrawer(false)} />
@@ -320,7 +295,6 @@ export default function Header() {
             {
               isManager == true ?
                 <Box sx={{ padding: "20px" }}>
-
                   <StyledTypography >MY TIMESHEETS</StyledTypography>
                   <ApprovalStyledBox direction={"row"}
                     onClick={handleCurrentWeekClick}
@@ -328,7 +302,6 @@ export default function Header() {
                     <ApprovalsTypography >
                       Current Week
                     </ApprovalsTypography>
-
                   </ApprovalStyledBox>
                   <AllStyledBox onClick={() => { navigate("/AllTimesheet/false"); handleClose(); }}>
                     <ApprovalsTypography>
@@ -341,7 +314,6 @@ export default function Header() {
             <StyledDrawerDivider
               orientation="horizontal"
               variant="middle"
-
             />
             <StyledBox >
               <StyledTypography>
@@ -360,7 +332,6 @@ export default function Header() {
                 <AllTypography >All</AllTypography>
               </AllStyledBox>
             </StyledBox>
-
           </MuiDrawer>
         </Toolbar>
       </StyledAppBar>
